@@ -7,8 +7,7 @@ int main(){
     Sculptor teste(50, 50, 50);
     
     teste.setColor(0.72, 0, 0, 1.0);
-    teste.putBox(0,49,0,49,0,49);
-    teste.cutBox(1,48,0,49,1,48);
+    teste.putSphere(25,25,25,25);
 
     //teste.setColor(0.72, 0, 1.0, 1.0);
     //teste.putEllipsoid(50,100,100,25,36,9);
