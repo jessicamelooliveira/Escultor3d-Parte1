@@ -4,11 +4,15 @@
 #include "writeOFF.cpp"
 
 int main(){
-    Sculptor teste(100, 100, 100);
+    Sculptor teste(50, 50, 50);
     
-    teste.setColor(0, 0.72, 0, 1.0);
+    teste.setColor(0.72, 0, 0, 1.0);
+    teste.putBox(0,49,0,49,0,49);
+    teste.cutBox(1,48,0,49,1,48);
 
-    /* cogumelo
+    //teste.setColor(0.72, 0, 1.0, 1.0);
+    //teste.putEllipsoid(50,100,100,25,36,9);
+    /*cogumelo
     teste.putEllipsoid(100, 100, 100, 21, 16, 21);
     teste.cutEllipsoid(100, 95, 100, 15, 16, 15);
     teste.cutBox(0, 199, 0, 90, 0, 199);
@@ -17,7 +21,7 @@ int main(){
     teste.putSphere(100, 95, 100, 225);
     
     teste.setColor(1.0, 1.0, 1.0, 1.0);
-    teste.putSphere(180, 100, 180, 10);*/
-   
+    teste.putSphere(180, 100, 180, 10);
+   */
     teste.writeOFF("teste.off");
 }
