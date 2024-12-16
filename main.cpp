@@ -19,26 +19,37 @@ int main(){
     kirby.cutBox(0, 99, 0, 16, 0, 99);
 
     // Olhos
-    kirby.setColor(0, 0.33, 0.57, 1.0);
-    //for(int i=45; j<50; j++){
-        //for(int j=5; k<10; k++){
-            //kirby.cutVoxel(35, 45, 45);
-            kirby.putVoxel(35, 45, 47);
-        //}
-    //}
+    kirby.setColor(0, 0, 0, 1.0);
+    for(int i=38; i<53; i++){
+        if(i>=40 && i<=50) continue;
+        for(int j=45; j<55; j++){
+        kirby.cutVoxel(i, j, 49);
+        }
+    }
+    for(int i=37; i<54; i++){
+        if(i>=40 && i<=50) continue;
+        for(int j=45; j<55; j++){
+            kirby.putVoxel(i, j, 48);
+        }
+    }
 
-    //teste.setColor(0.72, 0, 1.0, 1.0);
-    //teste.putEllipsoid(50,100,100,25,36,9);
-    /*cogumelo
-    teste.putEllipsoid(100, 100, 100, 21, 16, 21);
-    teste.cutEllipsoid(100, 95, 100, 15, 16, 15);
-    teste.cutBox(0, 199, 0, 90, 0, 199);
+    // Boca
+    for(int i=44; i<47; i++){
+        kirby.putVoxel(i, 41, 49);
+    }
+    kirby.putVoxel(43, 42, 49);
+    kirby.putVoxel(47, 42, 49);
+    kirby.putVoxel(42, 43, 49);
+    kirby.putVoxel(48, 43, 49);
 
-    teste.setColor(0.79, 0.67, 0.55, 1.0);
-    teste.putSphere(100, 95, 100, 225);
-    
-    teste.setColor(1.0, 1.0, 1.0, 1.0);
-    teste.putSphere(180, 100, 180, 10);
-   */
+    // Brilho
+    kirby.setColor(1.0, 1.0, 1.0, 1.0);
+    for(int i=38; i<54; i++){
+        if(i>=40 && i<=51) continue;
+        for(int j=53; j<55; j++){
+            kirby.putVoxel(i, j, 48);
+        }
+    }
+
     kirby.writeOFF("kirby.off");
 }
