@@ -15,3 +15,10 @@ git commit -m "Atualizar a data da última modificação"
 
 # Agora faz o push para o repositório
 git push origin master
+
+# Adiciona e faz commit do README.md
+git add .
+git commit -m "Atualização $DATE"
+
+# Agora faz o push para o repositório
+git push origin master
