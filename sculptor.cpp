@@ -100,7 +100,7 @@ void Sculptor::putSphere(int xcenter, int ycenter, int zcenter, int radius){
     for(int i=0; i<=nx; i++){
         for(int j=0; j<=ny; j++){
             for(int k=0; k<=nz; k++){
-                float esfera = pow((i-xcenter),2) + pow((j-ycenter),2) + pow((k-zcenter),2);
+                float esfera = sqrt(pow((i-xcenter),2) + pow((j-ycenter),2) + pow((k-zcenter),2));
                 if(esfera <= radius){
                     v[i][j][k].r = r;
                     v[i][j][k].g = g;
@@ -118,7 +118,7 @@ void Sculptor::cutSphere(int xcenter, int ycenter, int zcenter, int radius){
     for(int i=0; i<=nx; i++){
         for(int j=0; j<=ny; j++){
             for(int k=0; k<=nz; k++){
-                float esfera = pow((i-xcenter),2) + pow((j-ycenter),2) + pow((k-zcenter),2);
+                float esfera = sqrt(pow((i-xcenter),2) + pow((j-ycenter),2) + pow((k-zcenter),2));
                 if(esfera <= radius){
                     v[i][j][k].show = false;
                 }

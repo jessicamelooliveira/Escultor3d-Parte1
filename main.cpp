@@ -4,12 +4,12 @@
 #include "writeOFF.cpp"
 
 int main(){
-    Sculptor teste(50, 50, 50);
+    Sculptor teste(100, 100, 100);
     
     teste.setColor(0.97, 0.65, 0.72, 1.0);
-    teste.putSphere(25, 25, 25, 20);
-    teste.putSphere(10, 25, 25, 5);
-    teste.putSphere(35, 25, 25, 5);
+    teste.putSphere(45, 25, 25, 25);
+    teste.putSphere(20, 20, 25, 10);
+    teste.putSphere(70, 20, 25, 10);
 
 
     //teste.setColor(0.72, 0, 1.0, 1.0);
