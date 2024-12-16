@@ -13,5 +13,5 @@ echo "Digite a mensagem de commit"
 read mensagem
 
 git add .
-git commit -m "Atualização $mensagem"
+git commit -m "$mensagem"
 git push origin master
