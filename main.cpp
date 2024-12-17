@@ -14,8 +14,8 @@ int main(){
 
     // Pés
     kirby.setColor(0.86, 0, 0.34, 1.0);
-    kirby.putEllipsoid(28, 20, 25, 15, 5, 12);
-    kirby.putEllipsoid(62, 20, 25, 15, 5, 12);
+    kirby.putEllipsoid(28, 21, 25, 15, 5, 12);
+    kirby.putEllipsoid(62, 21, 25, 15, 5, 12);
     kirby.cutBox(0, 99, 0, 16, 0, 99);
 
     // Olhos
