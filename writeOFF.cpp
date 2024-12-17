@@ -46,31 +46,31 @@ void Sculptor::writeOFF(const char *filename){
     }
 
     // Escrever as faces
-    int voxelIndex = 0;
+    int voxelFaces = 0;
     for (int x = 0; x < nx; x++) {
         for (int y = 0; y < ny; y++) {
             for (int z = 0; z < nz; z++) {
                 if (v[x][y][z].show) {
                     // Definir faces para um cubo (voxel)
-                    fout << "4 " << voxelIndex * 8 + 0 << " " << voxelIndex * 8 + 1 << " " << voxelIndex * 8 + 2 << " " << voxelIndex * 8 + 3 << " "
+                    fout << "4 " << voxelFaces * 8 + 0 << " " << voxelFaces * 8 + 1 << " " << voxelFaces * 8 + 2 << " " << voxelFaces * 8 + 3 << " "
                          << std::fixed << std::setprecision(1) << v[x][y][z].r << " " 
                          << v[x][y][z].g << " " << v[x][y][z].b << " " << v[x][y][z].a << std::endl; // Face inferior
-                    fout << "4 " << voxelIndex * 8 + 4 << " " << voxelIndex * 8 + 5 << " " << voxelIndex * 8 + 6 << " " << voxelIndex * 8 + 7 << " "
+                    fout << "4 " << voxelFaces * 8 + 4 << " " << voxelFaces * 8 + 5 << " " << voxelFaces * 8 + 6 << " " << voxelFaces * 8 + 7 << " "
                          << std::fixed << std::setprecision(1) << v[x][y][z].r << " " 
                          << v[x][y][z].g << " " << v[x][y][z].b << " " << v[x][y][z].a << std::endl; // Face superior
-                    fout << "4 " << voxelIndex * 8 + 0 << " " << voxelIndex * 8 + 1 << " " << voxelIndex * 8 + 5 << " " << voxelIndex * 8 + 4 << " "
+                    fout << "4 " << voxelFaces * 8 + 0 << " " << voxelFaces * 8 + 1 << " " << voxelFaces * 8 + 5 << " " << voxelFaces * 8 + 4 << " "
                          << std::fixed << std::setprecision(1) << v[x][y][z].r << " " 
-                         << v[x][y][z].g << " " << v[x][y][z].b << " " << v[x][y][z].a << std::endl; // Face lateral
-                    fout << "4 " << voxelIndex * 8 + 1 << " " << voxelIndex * 8 + 2 << " " << voxelIndex * 8 + 6 << " " << voxelIndex * 8 + 5 << " "
+                         << v[x][y][z].g << " " << v[x][y][z].b << " " << v[x][y][z].a << std::endl; // Face lateral 1
+                    fout << "4 " << voxelFaces * 8 + 1 << " " << voxelFaces * 8 + 2 << " " << voxelFaces * 8 + 6 << " " << voxelFaces * 8 + 5 << " "
                          << std::fixed << std::setprecision(1) << v[x][y][z].r << " " 
-                         << v[x][y][z].g << " " << v[x][y][z].b << " " << v[x][y][z].a << std::endl; // Face lateral
-                    fout << "4 " << voxelIndex * 8 + 2 << " " << voxelIndex * 8 + 3 << " " << voxelIndex * 8 + 7 << " " << voxelIndex * 8 + 6 << " "
+                         << v[x][y][z].g << " " << v[x][y][z].b << " " << v[x][y][z].a << std::endl; // Face lateral 2
+                    fout << "4 " << voxelFaces * 8 + 2 << " " << voxelFaces * 8 + 3 << " " << voxelFaces * 8 + 7 << " " << voxelFaces * 8 + 6 << " "
                          << std::fixed << std::setprecision(1) << v[x][y][z].r << " " 
-                         << v[x][y][z].g << " " << v[x][y][z].b << " " << v[x][y][z].a << std::endl; // Face lateral
-                    fout << "4 " << voxelIndex * 8 + 3 << " " << voxelIndex * 8 + 0 << " " << voxelIndex * 8 + 4 << " " << voxelIndex * 8 + 7 << " "
+                         << v[x][y][z].g << " " << v[x][y][z].b << " " << v[x][y][z].a << std::endl; // Face lateral 3
+                    fout << "4 " << voxelFaces * 8 + 3 << " " << voxelFaces * 8 + 0 << " " << voxelFaces * 8 + 4 << " " << voxelFaces * 8 + 7 << " "
                          << std::fixed << std::setprecision(1) << v[x][y][z].r << " " 
-                         << v[x][y][z].g << " " << v[x][y][z].b << " " << v[x][y][z].a << std::endl; // Face lateral
-                voxelIndex++;
+                         << v[x][y][z].g << " " << v[x][y][z].b << " " << v[x][y][z].a << std::endl; // Face lateral 4
+                voxelFaces++;
                 }
             }
         }

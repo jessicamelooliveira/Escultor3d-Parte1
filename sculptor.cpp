@@ -129,10 +129,14 @@ void Sculptor::cutSphere(int xcenter, int ycenter, int zcenter, int radius){
 
 // Voxels que satisfazem à equação do elipsóide // Ativa e atribui a cor atual de desenho
 void Sculptor::putEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int ry, int rz){
+    float rx2, ry2, rz2;
+    rx2 = rx*rx;
+    ry2 = ry*ry;
+    rz2 = rz*rz;
     for(int i=0; i<=nx; i++){
         for(int j=0; j<=ny; j++){
             for(int k=0; k<=nz; k++){
-                float elipsoide = pow((i-xcenter),2)/pow(rx,2) + pow((j-ycenter),2)/pow(ry,2) + pow((k-zcenter),2)/pow(rz,2);
+                float elipsoide = pow((i-xcenter),2)/rx2 + pow((j-ycenter),2)/ry2 + pow((k-zcenter),2)/rz2;
                 if(elipsoide <= 1){
                     v[i][j][k].r = r;
                     v[i][j][k].g = g;
@@ -147,10 +151,14 @@ void Sculptor::putEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int r
 
 // Voxels que satisfazem à equação do elipsóide // Desativa
 void Sculptor::cutEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int ry, int rz){
+    float rx2, ry2, rz2;
+    rx2 = rx*rx;
+    ry2 = ry*ry;
+    rz2 = rz*rz;
     for(int i=0; i<=nx; i++){
         for(int j=0; j<=ny; j++){
             for(int k=0; k<=nz; k++){
-                float elipsoide = pow((i-xcenter),2)/pow(rx,2) + pow((j-ycenter),2)/pow(ry,2) + pow((k-zcenter),2)/pow(rz,2);
+                float elipsoide = pow((i-xcenter),2)/rx2 + pow((j-ycenter),2)/ry2 + pow((k-zcenter),2)/rz2;
                 if(elipsoide <= 1){
                     v[i][j][k].show = false;
                 }
@@ -158,36 +166,3 @@ void Sculptor::cutEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int r
         }
     }
 }
-/*
-// Voxels que satisfazem a um cilindro // Ativa e atribui a cor atual de desenho
-void Sculptor::putCylinder(int xcenter, int ycenter, int zcenter, int height, int radius){
-    for(int i=0; i<=nx; i++){
-        for(int j=0; j<=(ycenter+height); j++){
-            for(int k=0; k<=nz; k++){
-                float circulo = sqrt(pow(i-xcenter,2) + pow(k-zcenter,2));
-                if(circulo <= radius){
-                    v[i][j][k].r = r;
-                    v[i][j][k].g = g;
-                    v[i][j][k].b = b;
-                    v[i][j][k].a = a;
-                    v[i][j][k].show = true;
-                }
-            }
-        }
-    }
-}
-
-// Voxels que satisfazem a um cilindro // Desativa
-void Sculptor::cutCylinder(int xcenter, int ycenter, int zcenter, int height, int radius){
-    for(int i=0; i<=nx; i++){
-        for(int j=0; j<=(ycenter+height); j++){
-            for(int k=0; k<=nz; k++){
-                float circulo = sqrt(pow(i-xcenter,2) + pow(k-zcenter,2));
-                if(circulo <= radius){
-                    v[i][j][k].show = false;
-                }
-            }
-        }
-    }
-}
-*/

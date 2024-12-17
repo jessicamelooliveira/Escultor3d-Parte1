@@ -10,13 +10,13 @@ struct Voxel{
 class Sculptor{
 private:
     Voxel ***v;       // Matriz 3d
-    int nx, ny, nz;   // Dimensoes
-    float r, g, b, a; // Cor atual de desenho
+    int nx,ny,nz;   // Dimensoes
+    float r,g,b,a; // Cor atual de desenho
 
 public:
     Sculptor(int _nx, int _ny, int _nz);                   // Construtor da classe
     ~Sculptor();                                           // Destrutor da classe
-    void setColor(float r, float g, float b, float a); // Define a cor atual de desenho
+    void setColor(float r, float g, float b, float alpha); // Define a cor atual de desenho
 
     // Voxel na posição (x,y,z)
     void putVoxel(int x, int y, int z); // Ativa (show = true) e atribui a cor atual de desenho
@@ -33,11 +33,7 @@ public:
     // Voxels que satisfazem à equação do elipsóide
     void putEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int ry, int rz); // Ativa e atribui a cor atual de desenho
     void cutEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int ry, int rz); // Desativa
-/*
-    // Voxels que satisfazem a um cilindro
-    void putCylinder(int xcenter, int ycenter, int zcenter, int height, int radius); // Ativa e atribui a cor atual de desenho
-    void cutCylinder(int xcenter, int ycenter, int zcenter, int height, int radius); // Desativa
-*/
+
     void writeOFF(const char *filename); // Grava a escultura no formato OFF no arquivo filename
 };
 
