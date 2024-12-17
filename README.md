@@ -3,7 +3,7 @@ Projeto da 2ª unidade da disciplina de Algoritmos e Lógica de Programação (D
 
 >:computer: Por: [Jéssica de Melo Oliveira](https://github.com/jessicamelooliveira)\
 >:hourglass: Status: Finalizado\
->:date: Última modificação: 17 de dezembro de 2024, 19:55
+>:date: Última modificação: 17 de dezembro de 2024, 19:57
 
 Esse projeto tem como objetivo **criar uma ferramenta em C++ para gerar imagens em 3d** (extensão: .off) formada por *voxels*, tal como no jogo Minecraft. Pode-se visualizar o arquivo criado através desse site: [3dviewer.net](https://3dviewer.net/)
 
