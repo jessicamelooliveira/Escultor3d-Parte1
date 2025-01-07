@@ -25,9 +25,10 @@ void Sculptor::writeOFF(const char *filename){
         }
     }
     
+    // NVertices  NFaces  NArestas
     fout << nvoxels*8 << " " << nvoxels*6 << " 0" << std::endl;
 
-    // Escrever os vértices
+    // Escreve os vértices
     for (int x = 0; x < nx; x++) {
         for (int y = 0; y < ny; y++) {
             for (int z = 0; z < nz; z++) {
@@ -45,13 +46,13 @@ void Sculptor::writeOFF(const char *filename){
         }
     }
 
-    // Escrever as faces
+    // Escreve as faces
     int voxelFaces = 0;
     for (int x = 0; x < nx; x++) {
         for (int y = 0; y < ny; y++) {
             for (int z = 0; z < nz; z++) {
                 if (v[x][y][z].show) {
-                    // Definir faces para um cubo (voxel)
+                    // Define faces para um voxel (mini cubo)
                     fout << "4 " << voxelFaces*8 + 0 << " " << voxelFaces*8 + 1 << " " << voxelFaces*8 + 2 << " " << voxelFaces*8 + 3 << " "
                          << std::fixed << std::setprecision(1) << v[x][y][z].r << " " 
                          << v[x][y][z].g << " " << v[x][y][z].b << " " << v[x][y][z].a << std::endl; // Face inferior
