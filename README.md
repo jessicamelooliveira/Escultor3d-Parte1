@@ -1,4 +1,4 @@
-# Escultor 3d - Simplificado
+# Escultor 3d - Parte 1
 Projeto da 2ª unidade da disciplina de Algoritmos e Lógica de Programação (DCA0803).
 
 >:computer: Por: [Jéssica de Melo Oliveira](https://github.com/jessicamelooliveira)\
